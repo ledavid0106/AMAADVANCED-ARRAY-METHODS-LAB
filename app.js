@@ -254,24 +254,46 @@ function desiredIngredient(){
     })
     return results;
 }
-console.log("Includes desired ingredient", desiredIngredient())
+// console.log("Includes desired ingredient", desiredIngredient())
 
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
+function cuisines(callback){
+    return dishes.map(callback)
+} 
 
+function newarray(type){
+    return type.cuisine
+}
 
+console.log("Cuisine Array", cuisines(newarray))
+
+const newnewarray = dishes.map(type=>type.cuisine)
+console.log("Cuisine Array 2", newnewarray)
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
 
+function cuisinesAndName(){
+    return dishes.map(type=> type.cuisine + " " + type.name)
+} 
 
+console.log("Cuisine with name",cuisinesAndName())
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
 
 
-
-
+function advance(){
+    let results;
+    results = dishes.filter(function(veg){
+        if(veg.cuisine.includes("Vegetarian")){
+            return true;
+        }
+    })
+    return results.map(veg=>veg.cuisine + " " + veg.name)
+}
+console.log(advance())
 
 //BONUS
 
