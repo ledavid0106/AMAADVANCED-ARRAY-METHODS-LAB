@@ -115,23 +115,23 @@ let dishes = [
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
 
-function filterExample(){
-    //Debug tip: Use a console.log(el) inside the filter function to get a visualization of what el represents and see all its properties! This helps you to know what you can access with dot notation inside the filter. Do this every time you use a .filter or else you are working in the dark!
-    let results;
-    results = dishes.filter(function(el){
-        // console.log("el inside filterExample's filter: ", el)
-        if(el.cuisine === "Mexican"){
-            return true;
-        }
-        else{
-            return false;
-        }})
+// function filterExample(){
+//     //Debug tip: Use a console.log(el) inside the filter function to get a visualization of what el represents and see all its properties! This helps you to know what you can access with dot notation inside the filter. Do this every time you use a .filter or else you are working in the dark!
+//     let results;
+//     results = dishes.filter(function(el){
+//         // console.log("el inside filterExample's filter: ", el)
+//         if(el.cuisine === "Mexican"){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }})
 
-    return results;
-}
+//     return results;
+// }
 
-let mexicanFood = filterExample();
-console.log('mexicanFood from filterExample', mexicanFood)
+// let mexicanFood = filterExample();
+// console.log('mexicanFood from filterExample', mexicanFood)
 
 
 
@@ -260,15 +260,13 @@ function desiredIngredient(){
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
-function cuisines(callback){
-    return dishes.map(callback)
+function cuisines(){
+    return dishes.map(type=>type.cuisine)
 } 
 
-function newarray(type){
-    return type.cuisine
-}
+console.log("Cuisine Array", cuisines())
 
-console.log("Cuisine Array", cuisines(newarray))
+
 
 const newnewarray = dishes.map(type=>type.cuisine)
 console.log("Cuisine Array 2", newnewarray)
@@ -298,11 +296,6 @@ console.log("Includes only Vegetarian and name",advance())
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
-
-// let eliminate = dishes.filter((dishes.cuisine, index) => {
-//     return dishes.indexOf(dishes.cuisine) === index;
-// })
-// console.log(eliminate)
 
 function removeDuplicates(arr) {
     return arr.filter((cuisine,
@@ -336,4 +329,73 @@ function getSum(){
 console.log("Total Serving Count", getSum())
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
+// let objects = dishes.map(function(t){
+//     return t.cuisine}).filter(function (e,i,a) {
+//         return a.indexOf(e) === i
+//     })
 
+let testing = dishes.map(t=>t.cuisine);
+console.log(testing)
+
+function idkyet(arr) {
+    return arr.filter((cuisine,
+        index) => arr.indexOf(cuisine) !== index);
+}
+console.log("teste",idkyet(testing))
+
+let aple = idkyet(testing)
+
+// function tester(){
+//         {
+//         let result;
+//         result = testing.filter(function(idk){
+//             if(testing.includes(x)){
+//                 return false;
+//             } else {
+//                 return true;
+//             }
+//         })    
+//         return result
+//     }
+// }
+
+console.log(aple[0])
+// trash = []
+// for (let i = 0; i < aple.length; i++) {
+//     const tree = aple[i];
+//     result = testing.filter((item) => !item.includes(tree))
+// }
+// trash.push(result)
+// console.log(result)
+// result5 = testing.filter(aple.every(o=>testing.includes(o)))
+// result1 = testing.filter((item) => !item.includes(aple[0],aple[3]))
+// console.log(result5)
+
+
+// result = testing.filter((item) => !item.includes(aple[i]));
+// console.log(result)
+
+// function help(){
+//     let results;
+//     for (let i = 0; i < aple.length; i++) {
+//     results = testing.filter(function(include){
+//         if(!testing.includes(aple[i])) {
+//             return true;
+//         }
+//     })
+//     }
+//     return results
+// }
+
+// function tester(){
+//     let results;
+//     for (let i = 0; i < aple.length; i++) {
+//         if(testing.filter(e => !e.includes(aple[i]))) {
+//             return true;
+//         }
+//     }
+//     return results
+// }
+// console.log(help())
+// includes
+// filter
