@@ -293,17 +293,47 @@ function advance(){
     })
     return results.map(veg=>veg.cuisine + " " + veg.name)
 }
-console.log(advance())
+console.log("Includes only Vegetarian and name",advance())
 
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
 
+// let eliminate = dishes.filter((dishes.cuisine, index) => {
+//     return dishes.indexOf(dishes.cuisine) === index;
+// })
+// console.log(eliminate)
+
+function removeDuplicates(arr) {
+    return arr.filter((cuisine,
+        index) => arr.indexOf(cuisine) === index);
+}
+console.log("Removing Duplicate",removeDuplicates(newnewarray))
+
+
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+function ingredientIncludes(){
+    let results;
+    results = dishes.filter(function(include){
+        if(include.ingredients.includes("tomato" || "cheese")) {
+            return true;
+        }
+    })
+    return results
+}
 
+console.log("Ingredient Includes Cheese or Tomato",ingredientIncludes())
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+function getSum(){
+    const sumarray = dishes.map(type=>type.servings)
+    const sum = sumarray.reduce((previous, current) => previous + current) 
+    return sum;
+}
 
+console.log("Total Serving Count", getSum())
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
+
+
